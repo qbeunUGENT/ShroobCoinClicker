@@ -8,13 +8,19 @@
 
 (() => {
   'use strict';
-
+  const LEADERBOARD = [
+    { name: "Quinten", playtime: "27:45" },
+    { name: "Bob", playtime: "31:12" },
+    { name: "Alice", playtime: "1:02:08" },
+    { name: "Steve", playtime: "18:03" }
+  ];
   /* ============================== DATA ============================== */
 
   const PRICE_GROWTH = 1.15;           // generator price multiplier per purchase
   const AUTOSAVE_MS = 15000;           // autosave interval
   const OFFLINE_CAP_MS = 24 * 3600 * 1000; // max offline time credited
   const SAVE_KEY = 'shroobcoin-save-v1';
+  const sorted = [...LEADERBOARD].sort((a, b) => a.playtime - b.playtime);
 
   // Automatic generators (tiers 1–9). sps = ShroobCoins per second each.
   const GENERATORS = [
@@ -96,9 +102,30 @@
   })();
 
   /* ============================== FORMATTING ============================== */
+  function formatTime(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = Math.floor(seconds % 60);
+
+  return `${h}h ${m}m ${s}s`;
+  }
 
   const UNITS = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No'];
+  function timeToSeconds(time) {
+    const parts = time.split(':').map(Number);
 
+    if (parts.length === 2) {
+      const [minutes, seconds] = parts;
+      return minutes * 60 + seconds;
+    }
+
+    if (parts.length === 3) {
+      const [hours, minutes, seconds] = parts;
+      return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    return Infinity;
+  }
   function fmt(n) {
     if (!isFinite(n)) return '∞';
     const neg = n < 0 ? '-' : '';
@@ -466,39 +493,24 @@
     `);
   }
   function openLeaderboard() {
-    openModal(`
-      <h2>🏆 Leaderboard</h2>
+  const sorted = [...LEADERBOARD].sort((a, b) => a.playtime - b.playtime);
 
-      <div class="stat-row">
-        <span class="k">#1</span>
-        <span class="v">PlayerName — 999.99B SC</span>
-      </div>
+  const rows = sorted.map((entry, index) => `
+    <div class="stat-row">
+      <span class="k">#${index + 1} ${entry.name}</span>
+      <span class="v">${formatTime(entry.playtime)}</span>
+    </div>
+  `).join('');
 
-      <div class="stat-row">
-        <span class="k">#2</span>
-        <span class="v">PlayerName — 500.00B SC</span>
-      </div>
-
-      <div class="stat-row">
-        <span class="k">#3</span>
-        <span class="v">PlayerName — 250.00B SC</span>
-      </div>
-
-      <div class="stat-row">
-        <span class="k">#4</span>
-        <span class="v">PlayerName — 100.00B SC</span>
-      </div>
-
-      <div class="stat-row">
-        <span class="k">#5</span>
-        <span class="v">PlayerName — 50.00B SC</span>
-      </div>
-
-      <div class="modal-actions">
-        <button class="btn primary" data-action="close" type="button">Close</button>
-      </div>
-    `);
-  }
+  openModal(`
+    <h2>🏆 Leaderboard</h2>
+    <p class="win-sub">Fastest completion times</p>
+    ${rows}
+    <div class="modal-actions">
+      <button class="btn primary" onclick="closeModal()">Close</button>
+    </div>
+  `);
+}
 
   function openStats() {
     openModal(`
@@ -783,6 +795,7 @@
 
     el('statsBtn').addEventListener('click', openStats);
     el('settingsBtn').addEventListener('click', openSettings);
+    document.getElementById('leaderboardBtn').addEventListener('click', openLeaderboard);
 
     // Modal action delegation
     modal.addEventListener('click', (e) => {
