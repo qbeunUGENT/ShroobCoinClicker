@@ -9,10 +9,13 @@
 (() => {
   'use strict';
   const LEADERBOARD = [
-    { name: "Quinten", playtime: "27:45" },
-    { name: "Bob", playtime: "31:12" },
-    { name: "Alice", playtime: "1:02:08" },
-    { name: "Steve", playtime: "18:03" }
+    { name: "Quinten", playtime: "27:59" },
+    { name: "Ilan", playtime: "8:10" },
+    { name: "Xander", playtime: "5:07" },
+    { name: "Joel", playtime: "2:57" },
+    { name: "Dante", playtime: "4:00" },
+    { name: "Sej", playtime: "10:33" },
+    { name: "Joel (no cheating)", playtime: "3:12" }
   ];
   /* ============================== DATA ============================== */
 
@@ -525,7 +528,7 @@
     <p class="win-sub">Fastest completion times</p>
     ${rows}
     <div class="modal-actions">
-      <button class="btn primary" onclick="closeModal()">Close</button>
+      
     </div>
   `);
 }
