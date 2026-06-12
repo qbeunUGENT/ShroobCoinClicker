@@ -106,9 +106,25 @@
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
   const s = Math.floor(seconds % 60);
+  
 
   return `${h}h ${m}m ${s}s`;
   }
+  function timeToSeconds(time) {
+  const parts = time.split(':').map(Number);
+
+  if (parts.length === 2) {
+    const [minutes, seconds] = parts;
+    return minutes * 60 + seconds;
+  }
+
+  if (parts.length === 3) {
+    const [hours, minutes, seconds] = parts;
+    return hours * 3600 + minutes * 60 + seconds;
+  }
+
+  return Infinity;
+}
 
   const UNITS = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No'];
   function timeToSeconds(time) {
@@ -493,14 +509,16 @@
     `);
   }
   function openLeaderboard() {
-  const sorted = [...LEADERBOARD].sort((a, b) => a.playtime - b.playtime);
+  const sorted = [...LEADERBOARD].sort(
+  (a, b) => timeToSeconds(a.playtime) - timeToSeconds(b.playtime)
+);
 
   const rows = sorted.map((entry, index) => `
-    <div class="stat-row">
-      <span class="k">#${index + 1} ${entry.name}</span>
-      <span class="v">${formatTime(entry.playtime)}</span>
-    </div>
-  `).join('');
+  <div class="stat-row">
+    <span class="k">#${index + 1} ${entry.name}</span>
+    <span class="v">${entry.playtime}</span>
+  </div>
+`).join('');
 
   openModal(`
     <h2>🏆 Leaderboard</h2>
