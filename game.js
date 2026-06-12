@@ -465,6 +465,40 @@
       </div>
     `);
   }
+  function openLeaderboard() {
+    openModal(`
+      <h2>🏆 Leaderboard</h2>
+
+      <div class="stat-row">
+        <span class="k">#1</span>
+        <span class="v">PlayerName — 999.99B SC</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="k">#2</span>
+        <span class="v">PlayerName — 500.00B SC</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="k">#3</span>
+        <span class="v">PlayerName — 250.00B SC</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="k">#4</span>
+        <span class="v">PlayerName — 100.00B SC</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="k">#5</span>
+        <span class="v">PlayerName — 50.00B SC</span>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn primary" data-action="close" type="button">Close</button>
+      </div>
+    `);
+  }
 
   function openStats() {
     openModal(`
