@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e1f22">
+  <title>ShroobCoin Clicker</title>
+  <meta name="description" content="The official 4DickDestroyer incremental game. Click the shroob, hire generators, buy Faker, win.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="" class="brand-logo" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <h1>ShroobCoin Clicker</h1>
+        <p class="tagline">The official 4DickDestroyer idle experience</p>
+      </div>
+    </div>
+
+    <div class="wallet">
+      <div class="balance-row">
+        <span id="balance" class="balance">0</span>
+        <span class="sc-label">SC</span>
+      </div>
+      <div class="rates">
+        <span id="sps">0 SC/s</span>
+        <span class="dot" aria-hidden="true">•</span>
+        <span id="clickPower">1 SC/click</span>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="statsBtn" type="button">📊 Stats</button>
+      <button class="icon-btn" id="settingsBtn" type="button">⚙️ Settings</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Left: the big clicker ============ -->
+    <section class="clicker-zone" aria-label="Clicking area">
+      <div class="click-stage" id="clickStage">
+        <button id="bigButton" class="big-button" type="button" aria-label="Click to earn ShroobCoins">
+          <img src="logo.png" alt="" id="logoImg" draggable="false">
+          <span class="logo-fallback" id="logoFallback" hidden>🍄</span>
+        </button>
+        <div id="floatLayer" class="float-layer" aria-hidden="true"></div>
+      </div>
+      <p class="hint">Click the shroob. Stack ShroobCoins. Buy Faker. Win.</p>
+    </section>
+
+    <!-- ============ Right: the shop ============ -->
+    <aside class="shop" aria-label="Upgrades shop">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="generators" role="tab" aria-selected="true" type="button">Generators</button>
+        <button class="tab" data-tab="clickers" role="tab" aria-selected="false" type="button">Clickers</button>
+      </div>
+
+      <div id="generatorsPanel" class="panel active" role="tabpanel">
+        <div class="shop-toolbar">
+          <span class="toolbar-label">Buy amount</span>
+          <div class="amt-group">
+            <button class="amt active" data-amt="1" type="button">×1</button>
+            <button class="amt" data-amt="10" type="button">×10</button>
+            <button class="amt" data-amt="max" type="button">Max</button>
+          </div>
+        </div>
+        <div id="generatorsList" class="card-list"></div>
+      </div>
+
+      <div id="clickersPanel" class="panel" role="tabpanel">
+        <p class="panel-note">Each affliction permanently doubles your SC per click. One-time purchases. <strong id="clickersMult">Current multiplier: ×1</strong></p>
+        <div id="clickersList" class="card-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <span id="saveStatus">—</span>
+    <span class="sep" aria-hidden="true">•</span>
+    <span>Made with 🍄 for the 4DickDestroyer server</span>
+    <span class="sep" aria-hidden="true">•</span>
+    <span>Not affiliated with Riot Games or Discord</span>
+  </footer>
+
+  <!-- ============ Modal + toasts ============ -->
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
