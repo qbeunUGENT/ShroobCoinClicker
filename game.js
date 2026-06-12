@@ -12,10 +12,10 @@
     { name: "Quinten", playtime: "27:59" },
     { name: "Ilan", playtime: "8:10" },
     { name: "Xander", playtime: "4:05" },
-    { name: "Joel", playtime: "2:57" },
+    { name: "Joel (cheating grr)", playtime: "2:00" },
     { name: "Dante", playtime: "4:00" },
     { name: "Sej", playtime: "10:33" },
-    { name: "Joel (no cheating)", playtime: "2:00" }
+    { name: "Joel (no cheating)", playtime: "3:12" }
   ];
   /* ============================== DATA ============================== */
 
