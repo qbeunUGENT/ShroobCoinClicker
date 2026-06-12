@@ -435,8 +435,8 @@
   /* ============================== MODALS ============================== */
 
   function openModal(html, opts = {}) {
-     console.log("MODAL OPENED"),
-     if (!html) {
+    console.log("MODAL OPENED");
+    if (!html) {
     console.error("Modal opened with empty content");
     return;
     }
