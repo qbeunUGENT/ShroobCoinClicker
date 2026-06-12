@@ -34,7 +34,7 @@
     id: 'faker',
     name: 'Faker',
     icon: '🐐',
-    base: 500000000,
+    base: 50000000,
     desc: 'The GOAT himself. Purchase to win the game.'
   };
 
@@ -42,13 +42,13 @@
   // Prices are spread across the whole game so clicking stays useful
   // without ever dominating passive income (per the balance brief).
   const CLICKERS = [
-    { id: 'aids',     name: 'AIDS',         icon: '🧬', price: 100 },
-    { id: 'cholera',  name: 'Cholera',      icon: '💧', price: 800 },
-    { id: 'plague',   name: 'Plague',       icon: '🐀', price: 6500 },
-    { id: 'tb',       name: 'Tuberculosis', icon: '🫁', price: 50000 },
-    { id: 'smallpox', name: 'Smallpox',     icon: '🤒', price: 400000 },
-    { id: 'malaria',  name: 'Malaria',      icon: '🦟', price: 3500000 },
-    { id: 'ebola',    name: 'Ebola',        icon: '🦠', price: 25000000 }
+    { id: 'aids',     name: 'AIDS',         icon: '🧬', price: 5 },
+    { id: 'cholera',  name: 'Cholera',      icon: '💧', price: 20 },
+    { id: 'plague',   name: 'Plague',       icon: '🐀', price: 65 },
+    { id: 'tb',       name: 'Tuberculosis', icon: '🫁', price: 500 },
+    { id: 'smallpox', name: 'Smallpox',     icon: '🤒', price: 4000 },
+    { id: 'malaria',  name: 'Malaria',      icon: '🦟', price: 35000 },
+    { id: 'ebola',    name: 'Ebola',        icon: '🦠', price: 25000 }
   ];
 
   /* ============================== STATE ============================== */
