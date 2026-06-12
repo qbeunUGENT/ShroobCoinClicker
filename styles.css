@@ -2,7 +2,9 @@
    ShroobCoin Clicker — styles
    Discord-flavoured dark theme for the 4DickDestroyer server
    ============================================================ */
-
+.overlay[hidden] {
+    display: none !important;
+}
 :root {
   --bg: #1e1f22;
   --bg-deep: #161719;
