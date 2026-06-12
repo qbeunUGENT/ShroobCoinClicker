@@ -15,7 +15,8 @@
     { name: "Joel (cheating grr)", playtime: "2:00" },
     { name: "Dante", playtime: "4:00" },
     { name: "Sej", playtime: "10:33" },
-    { name: "Joel (no cheating)", playtime: "3:12" }
+    { name: "Joel (no cheating)", playtime: "3:12" },
+    { name: "Lieven", playtime: "4:22" }
   ];
   /* ============================== DATA ============================== */
 
