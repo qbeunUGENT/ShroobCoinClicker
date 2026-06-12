@@ -435,6 +435,11 @@
   /* ============================== MODALS ============================== */
 
   function openModal(html, opts = {}) {
+     console.log("MODAL OPENED"),
+     if (!html) {
+    console.error("Modal opened with empty content");
+    return;
+    }
     modal.innerHTML = html;
     overlay.hidden = false;
     overlay.dataset.locked = opts.locked ? '1' : '';
