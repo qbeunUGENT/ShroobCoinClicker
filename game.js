@@ -11,7 +11,7 @@
   const LEADERBOARD = [
     { name: "Quinten", playtime: "27:59" },
     { name: "Ilan", playtime: "8:10" },
-    { name: "Xander", playtime: "5:07" },
+    { name: "Xander", playtime: "4:05" },
     { name: "Joel", playtime: "2:57" },
     { name: "Dante", playtime: "4:00" },
     { name: "Sej", playtime: "10:33" },
