@@ -18,15 +18,15 @@
 
   // Automatic generators (tiers 1–9). sps = ShroobCoins per second each.
   const GENERATORS = [
-    { id: 'teammate',  name: 'League Ranked Teammate', icon: '⚔️',  sps: 0.1,     base: 10,        desc: "0/7/2 and it's somehow the jungler's fault." },
-    { id: 'bard',      name: '96rekkilamgems Bard',    icon: '🎶',  sps: 1,       base: 100,       desc: 'Roams the whole map collecting chimes and coins.' },
-    { id: 'valorant',  name: 'Valorant Player',        icon: '🔫',  sps: -10,     base: 500,       desc: 'Actively loses you money. A bold investment.', negative: true },
-    { id: 'tahm',      name: 'Tahm Kench Botlane',     icon: '🐸',  sps: 10,      base: 2500,      desc: 'An unkillable river king with an appetite for SC.' },
-    { id: 'joel',      name: 'Joel',                   icon: '🗿',  sps: 100,     base: 15000,     desc: "He's just Joel. He gets it done." },
-    { id: 'tentsletje',name: 'Tentsletje',             icon: '⛺',  sps: 1000,    base: 100000,    desc: 'Camping equipment sold separately.' },
-    { id: 'ginger',    name: 'Ginger Man',             icon: '🧑‍🦰', sps: 10000,   base: 750000,    desc: 'Powered by an unexplained source of energy.' },
-    { id: 'emerald',   name: 'Emerald Player',         icon: '💚',  sps: 100000,  base: 5000000,   desc: 'Hardstuck, but the coins keep flowing.' },
-    { id: 'egirl',     name: 'E-girl Support',         icon: '🎀',  sps: 1000000, base: 50000000,  desc: 'Heals your team. Drains your wallet. Worth it.' }
+    { id: 'teammate',  name: 'League Ranked Teammate', icon: '⚔️',  sps: 0.1,     base: 1,        desc: "0/7/2 and it's somehow the jungler's fault." },
+    { id: 'bard',      name: '96rekkilamgems Bard',    icon: '🎶',  sps: 1,       base: 10,       desc: 'Roams the whole map collecting chimes and coins.' },
+    { id: 'valorant',  name: 'Valorant Player',        icon: '🔫',  sps: -10,     base: 50,       desc: 'Actively loses you money. A bold investment.', negative: true },
+    { id: 'tahm',      name: 'Tahm Kench Botlane',     icon: '🐸',  sps: 10,      base: 250,      desc: 'An unkillable river king with an appetite for SC.' },
+    { id: 'joel',      name: 'Joel',                   icon: '🗿',  sps: 100,     base: 1500,     desc: "He's just Joel. He gets it done." },
+    { id: 'tentsletje',name: 'Tentsletje',             icon: '⛺',  sps: 1000,    base: 10000,    desc: 'Camping equipment sold separately.' },
+    { id: 'ginger',    name: 'Ginger Man',             icon: '🧑‍🦰', sps: 10000,   base: 75000,    desc: 'Powered by an unexplained source of energy.' },
+    { id: 'emerald',   name: 'Emerald Player',         icon: '💚',  sps: 100000,  base: 500000,   desc: 'Hardstuck, but the coins keep flowing.' },
+    { id: 'egirl',     name: 'E-girl Support',         icon: '🎀',  sps: 1000000, base: 5000000,  desc: 'Heals your team. Drains your wallet. Worth it.' }
   ];
 
   // Tier 10 — the win condition.
